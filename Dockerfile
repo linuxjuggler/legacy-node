@@ -5,6 +5,7 @@ RUN apt-get update && apt-get upgrade -y && \
     mkdir /src && cd /src && \
     wget -c https://nodejs.org/dist/v0.10.33/node-v0.10.33.tar.gz && tar xvzf node-v0.10.33.tar.gz && \
     cd node-v0.10.33 && ./configure && make && make install && \
+    rm -fr node-v0.10.33 && \
     npm i -g npm@latest-2 && \
     apt-get autoremove -y && rm -rf /var/lib/apt/lists/* 
 
